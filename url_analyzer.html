@@ -10,23 +10,33 @@ By: Rayan Alkhelaiwi
 
 <head>
 
-  <!-- jQuery Library -->
+  <meta charset="utf-8">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <h1 style="color:blue">URL Analyzer</h1>
 </head>
 
-<body>
+  <body>
 
-  <input type="url" id="url" value='https://github.com/RayanAlkhelaiwi?tab=repositories'>
-  <button id="analyze">Analyze</button>
+    <input type="url" id="url" value='https://github.com/RayanAlkhelaiwi?tab=repositories'>
+    <button id="analyze">Analyze</button>
 
-  <div id='scheme'></div>
-  <div id='host'></div>
-  <div id='path'></div>
-  <div id='query'></div>
+    <div id='scheme'></div>
+    <div id='host'></div>
+    <div id='path'></div>
+    <div id='query'></div>
 
-  <script>
-    $(document).on("click", "#analyze", function() {
+    <script>
+
+    $(document).on("click", "#analyze", function(){
 
       var enteredURL = $("#url").val();
 
@@ -43,7 +53,6 @@ By: Rayan Alkhelaiwi
       document.getElementById('path').innerHTML = 'Path: ' + path;
       document.getElementById('query').innerHTML = 'Query: ' + query;
     });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
