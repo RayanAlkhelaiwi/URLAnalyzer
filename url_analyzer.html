@@ -1,0 +1,49 @@
+<!--
+
+URL Analyzer
+By: Rayan Alkhelaiwi
+
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <h1 style="color:blue">URL Analyzer</h1>
+</head>
+
+<body>
+
+  <input type="url" id="url" value='https://github.com/RayanAlkhelaiwi?tab=repositories'>
+  <button id="analyze">Analyze</button>
+
+  <div id='scheme'></div>
+  <div id='host'></div>
+  <div id='path'></div>
+  <div id='query'></div>
+
+  <script>
+    $(document).on("click", "#analyze", function() {
+
+      var enteredURL = $("#url").val();
+
+      var parser = document.createElement('a');
+      parser.href = enteredURL;
+
+      var scheme = parser.protocol;
+      var host = parser.hostname;
+      var path = parser.pathname;
+      var query = parser.search;
+
+      document.getElementById('scheme').innerHTML = 'Scheme: ' + scheme;
+      document.getElementById('host').innerHTML = 'Host: ' + host;
+      document.getElementById('path').innerHTML = 'Path: ' + path;
+      document.getElementById('query').innerHTML = 'Query: ' + query;
+    });
+  </script>
+</body>
+
+</html>
