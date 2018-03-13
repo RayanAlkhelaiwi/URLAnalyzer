@@ -10,6 +10,13 @@ By: Rayan Alkhelaiwi
 
 <head>
 
+  <style>
+    div.m1 {
+      margin-left: 35px;
+      margin-right: 850px;
+    }
+  </style>
+
   <meta charset="utf-8">
 
   <!-- Latest compiled and minified CSS -->
@@ -20,25 +27,38 @@ By: Rayan Alkhelaiwi
 
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <h1 style="color:blue">URL Analyzer</h1>
+  <div class="m1">
+    <h1 style="color:blue">URL Analyzer</h1>
+  </div>
 </head>
 
-  <body>
+<body>
 
-    <input type="url" id="url" value='https://github.com/RayanAlkhelaiwi?tab=repositories'>
-    <button id="analyze">Analyze</button>
+  <div class="m1">
+    <form>
+      <div class="form-group">
+        <label for="link">URL:</label>
+        <input type="url" class="form-control" id="link">
+      </div>
 
+      <div class="form-group">
+        <button type="button" class="btn btn-default" id="analyze">Analyze</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="m1">
     <div id='scheme'></div>
     <div id='host'></div>
     <div id='path'></div>
     <div id='query'></div>
+  </div>
 
-    <script>
+  <script>
+    $(document).on("click", "#analyze", function() {
 
-    $(document).on("click", "#analyze", function(){
-
-      var enteredURL = $("#url").val();
+      var enteredURL = $("#link").val();
 
       var parser = document.createElement('a');
       parser.href = enteredURL;
@@ -53,6 +73,7 @@ By: Rayan Alkhelaiwi
       document.getElementById('path').innerHTML = 'Path: ' + path;
       document.getElementById('query').innerHTML = 'Query: ' + query;
     });
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
